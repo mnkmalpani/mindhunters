@@ -1,0 +1,110 @@
+Problem 1
+What is the time & space complexity of the following code:
+let a = 0, b = 0;
+for (let i = 0; i < n; ++i) {
+    a = a + i;
+}
+for (let j = 0; j < m; ++j) {
+    b = b + j;
+}
+
+TIME COMPLEXITY: O(n+m)
+SPACE COMPLEXITY: O(1)
+
+Problem 2
+What is the time & space complexity of the following code:
+let a = 0, b = 0;
+for (let i = 0; i < n; ++i) {
+    for (let j = 0; j < n; ++j) {
+        a = a + j;
+    }
+}
+for (let k = 0; k < n; ++k) {
+    b = b + k;
+}
+
+TIME COMPLEXITY: O(n^2)
+SPACE COMPLEXITY: O(1)
+
+Problem 3
+What is the time and space complexity of the following code:
+let a = 0;
+for (let i = 0; i < n; ++i) {
+    for (let j = n; j > i; --j) {
+        a = a + i + j;
+    }
+}
+
+TIME COMPLEXITY: O(n^2)
+SPACE COMPLEXITY: O(1)
+
+Problem 4
+What is the time complexity of the following code:
+for (let i = n; i > 0; i = parseInt(i / 2)) {
+    console.log(i);
+TIME COMPLEXITY: O(logn)
+
+Problem 5
+What is the time complexity of the following code:
+for (let i = 1; i < n; i = i * 2) {
+    console.log(i);
+}
+TIME COMPLEXITY: O(logn)
+
+Problem 6
+What is the time complexity of the following code:
+for (let i = 0; i < n; ++i) {
+    for (let j = 1; j < n; j = j * 2) {
+        console.log(j);
+    }
+}
+TIME COMPLEXITY: O(nlogn)
+
+Problem 7
+What is the time complexity of the following code:
+// search an element in an array
+// list is already sorted
+function search (list, item, start, end) {
+    if (start > end) {
+        return false;
+    }
+    const mid = Math.floor((start + end) / 2);
+    if (list[mid] < item) {
+        return search(list, item, mid + 1, end);
+    }
+    if (list[mid] > item) {
+        return search(list, item, start, mid - 1);
+    }
+    return true;
+}
+TIME COMPLEXITY: O(logn)
+
+Problem 8
+What is the time complexity of the following code:
+// count the occurrence of an element in an array
+// list is already sorted
+function count (list, item, start, end) {
+    if (start > end) {
+        return 0;
+    }
+    const mid = Math.floor((start + end) / 2);
+    if (list[mid] < item) {
+        return count(list, item, mid + 1, end);
+    }
+    if (list[mid] > item) {
+        return count(list, item, start, mid - 1);
+    }
+    return count(list, item, start, mid - 1) + 1 + count(list, item, mid + 1, end);
+}
+TIME COMPLEXITY: O(n)
+
+Problem 9
+What is the time complexity of the following code:
+// Fibonacci of nth element
+function fibonacci (n) {
+    if (n <= 1) {
+        return 1;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+TIME COMPLEXITY: O(2^n)
